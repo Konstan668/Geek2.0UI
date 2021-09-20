@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -117,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197.10144927536234" y="93.75"/>
+            <point key="canvasLocation" x="-596" y="146"/>
         </scene>
         <!--GroupsViewController-->
         <scene sceneID="TmF-Fi-e9U">
@@ -157,7 +158,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Ra6-zX-pqX" secondAttribute="trailing" constant="9" id="5v8-Sa-edk"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Ra6-zX-pqX" secondAttribute="trailing" constant="9" id="5v8-Sa-edk"/>
                                                 <constraint firstItem="Ra6-zX-pqX" firstAttribute="top" secondItem="CQf-44-DBg" secondAttribute="topMargin" constant="44" id="BXt-5J-Zco"/>
                                                 <constraint firstItem="iMW-74-HQN" firstAttribute="leading" secondItem="CQf-44-DBg" secondAttribute="leading" constant="5" id="CDW-Vx-FSq"/>
                                                 <constraint firstItem="iMW-74-HQN" firstAttribute="top" secondItem="CQf-44-DBg" secondAttribute="top" constant="5" id="EeL-Yc-wEN"/>
@@ -209,7 +210,7 @@
         <!--Photos-->
         <scene sceneID="muK-qa-UrB">
             <objects>
-                <viewController title="Photos" id="slV-cQ-qnI" customClass="PhotosViewController" customModule="VKAPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotosViewController" title="Photos" id="slV-cQ-qnI" customClass="PhotosViewController" customModule="VKAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UfG-Fe-5En">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -218,28 +219,39 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WVv-Xw-nz9">
-                                    <size key="itemSize" width="414" height="308"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="WVv-Xw-nz9">
+                                    <size key="itemSize" width="320" height="300"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="photoCell" id="HMF-8x-y2j" customClass="PhotosCollectionViewCell" customModule="VKAPP" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="308"/>
+                                        <rect key="frame" x="47" y="0.0" width="320" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="308"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YgO-Da-kAz">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="o7g-B1-gt7">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="308"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3g-d0-bIb" customClass="LikeControl" customModule="VKAPP" customModuleProvider="target">
+                                                    <rect key="frame" x="260" y="265" width="60" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="Ntn-3a-Yug"/>
+                                                        <constraint firstAttribute="width" constant="60" id="fy8-Yb-5Hw"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
-                                        </view>
-                                        <size key="customSize" width="414" height="308"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="m3g-d0-bIb" secondAttribute="bottom" id="XII-jt-R42"/>
+                                                <constraint firstAttribute="trailing" secondItem="m3g-d0-bIb" secondAttribute="trailing" id="rNa-zy-FP1"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="likeControl" destination="m3g-d0-bIb" id="d11-sk-FIW"/>
                                             <outlet property="photoImage" destination="o7g-B1-gt7" id="Euu-sJ-bLN"/>
                                         </connections>
                                     </collectionViewCell>
@@ -352,32 +364,32 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TLb-mR-rcn">
-                                                    <rect key="frame" x="8" y="8" width="148" height="98"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGj-Ph-ooP" customClass="AvatarView" customModule="VKAPP" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="0.0" width="230" height="114"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="98" id="SEE-jg-R7v"/>
-                                                        <constraint firstAttribute="width" constant="148" id="fwy-tP-GoR"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="148" id="s5P-kL-Q77"/>
+                                                        <constraint firstAttribute="width" constant="230" id="zZG-6I-aGA"/>
                                                     </constraints>
-                                                </imageView>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naP-GA-dIV">
-                                                    <rect key="frame" x="164" y="47" width="222" height="20.5"/>
+                                                    <rect key="frame" x="250" y="47" width="128" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="TLb-mR-rcn" firstAttribute="leading" secondItem="ayj-2l-0OK" secondAttribute="leading" constant="8" id="39S-EV-nVa"/>
-                                                <constraint firstAttribute="bottom" secondItem="TLb-mR-rcn" secondAttribute="bottom" constant="8" id="8ck-LF-1Oi"/>
-                                                <constraint firstItem="naP-GA-dIV" firstAttribute="centerY" secondItem="TLb-mR-rcn" secondAttribute="centerY" id="UyM-kd-ubB"/>
-                                                <constraint firstItem="naP-GA-dIV" firstAttribute="leading" secondItem="TLb-mR-rcn" secondAttribute="trailing" constant="8" id="f4i-xY-jn1"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="naP-GA-dIV" secondAttribute="trailing" constant="8" id="g5y-qJ-NDb"/>
-                                                <constraint firstItem="TLb-mR-rcn" firstAttribute="top" secondItem="ayj-2l-0OK" secondAttribute="top" constant="8" id="hk2-xP-3Me"/>
+                                                <constraint firstItem="kGj-Ph-ooP" firstAttribute="leading" secondItem="ayj-2l-0OK" secondAttribute="leading" constant="10" id="6lC-a0-QXg"/>
+                                                <constraint firstAttribute="bottom" secondItem="kGj-Ph-ooP" secondAttribute="bottom" id="XWb-bS-lAS"/>
+                                                <constraint firstItem="kGj-Ph-ooP" firstAttribute="top" secondItem="ayj-2l-0OK" secondAttribute="top" id="ZvG-9Q-cIv"/>
+                                                <constraint firstItem="naP-GA-dIV" firstAttribute="leading" secondItem="kGj-Ph-ooP" secondAttribute="trailing" constant="10" id="nM3-Gf-ghE"/>
+                                                <constraint firstItem="naP-GA-dIV" firstAttribute="top" secondItem="ayj-2l-0OK" secondAttribute="topMargin" constant="36" id="s5b-HL-V4S"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="naP-GA-dIV" secondAttribute="trailing" constant="16" id="sLs-05-X1P"/>
+                                                <constraint firstItem="naP-GA-dIV" firstAttribute="centerY" secondItem="kGj-Ph-ooP" secondAttribute="centerY" id="tUh-6D-pan"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="friendsImage" destination="TLb-mR-rcn" id="ZQ4-lQ-Jbj"/>
+                                            <outlet property="avatarView" destination="kGj-Ph-ooP" id="GI7-4N-hEV"/>
                                             <outlet property="friendsLabel" destination="naP-GA-dIV" id="Rpw-4R-mNa"/>
                                             <segue destination="slV-cQ-qnI" kind="show" identifier="photosSegue" trigger="accessoryAction" id="XKI-Wd-AFL"/>
                                         </connections>

@@ -8,7 +8,17 @@
 import Foundation
 
 struct User {
-    let userName: String
-    let userImageName: String
-    let userPhothosName: [String]
+    var userName: String
+    var userImageName: String
+    var userPhothosName: [String]
+    var index: String
+    
+
+    init(userName: String, userImageName: String, userPhotossName: [String]) {
+        self.userName = userName
+        self.userImageName = userImageName
+        self.userPhothosName = userPhotossName
+        self.index = String(userName.prefix(1))
+    }
 }
+

@@ -8,9 +8,12 @@
 import UIKit
 
 class PhotosViewController: UIViewController {
+    
+    
+    
     @IBOutlet weak var photosCollectionView: UICollectionView!
     
-    var users = User(userName: "", userImageName: "", userPhothosName: [""])
+    var users = User(userName: "", userImageName: "", userPhotossName: [""])
     
     
     
@@ -18,7 +21,6 @@ class PhotosViewController: UIViewController {
         super.viewDidLoad()
         photosCollectionView.dataSource = self
         photosCollectionView.delegate = self
-        
     }
     
     
@@ -35,6 +37,8 @@ extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as!PhotosCollectionViewCell
         cell.photoImage.image = UIImage(named: users.userPhothosName[indexPath.row])
+        cell.photoImage.contentMode = .scaleAspectFill
+        
         return cell
     }
     

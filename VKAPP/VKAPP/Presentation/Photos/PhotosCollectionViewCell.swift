@@ -9,6 +9,10 @@ import UIKit
 
 class PhotosCollectionViewCell: UICollectionViewCell {
     
+    
+    
+
+    @IBOutlet weak var likeControl: LikeControl!
     @IBOutlet weak var photoImage: UIImageView!
     
     static let identifier = "photoCell"
