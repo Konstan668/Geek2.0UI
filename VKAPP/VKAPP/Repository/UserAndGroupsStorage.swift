@@ -14,7 +14,7 @@ class UserAndGroupsStorage {
     init() {
         self.users = [
             User(userName: "Sergey", userImageName: "SergeyLogo", userPhotossName: ["Serg2","Serg3"]),
-            User(userName: "Andrey", userImageName: "AndreyLogo", userPhotossName: ["Andr1", "Andr2", "Andr3"]),
+            User(userName: "Andrey", userImageName: "AndreyLogo", userPhotossName: ["Andr1", "Andr2", "Andr3","Andr1", "Andr2", "Andr3","Andr1", "Andr2", "Andr3"]),
             User(userName: "CAndrey", userImageName: "", userPhotossName: [""]),
             User(userName: "SAndrey", userImageName: "", userPhotossName: [""]),
             User(userName: "JAndrey", userImageName: "", userPhotossName: [""]),
