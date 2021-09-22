@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User {
+struct User: Equatable {
     var userName: String
     var userImageName: String
     var userPhothosName: [String]
