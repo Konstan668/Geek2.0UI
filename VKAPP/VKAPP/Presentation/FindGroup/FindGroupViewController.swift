@@ -31,6 +31,7 @@ extension FindGroupViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FindGroupTableViewCell.identifier) as! FindGroupTableViewCell
         cell.configure(group: groups.groups[indexPath.row])
+        cell.addSubview(cell.addImageButton())
         return cell
     }
     

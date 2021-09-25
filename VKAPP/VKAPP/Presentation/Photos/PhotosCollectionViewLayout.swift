@@ -8,8 +8,8 @@
 import UIKit
 class PhotosCollectionViewLayout: UICollectionViewLayout {
     var cacheAttributes = [IndexPath: UICollectionViewLayoutAttributes] ()
-    var columnsCount = 1
-    var cellHeight:CGFloat = 400
+    var columnsCount = 2
+    var cellHeight:CGFloat = 500
     
     private var totalCellHeight: CGFloat = 0
     
@@ -34,16 +34,16 @@ class PhotosCollectionViewLayout: UICollectionViewLayout {
     
             attributes.frame = CGRect(x: lastX, y: lastY, width: smallCellWidth, height: self.cellHeight)
             
-            let isLastColumn = (index + 2) % (self.columnsCount + 1) == 0 || index == itemsCount - 1
-            if isLastColumn {
-                lastX = 0
-                lastY += self.cellHeight
-            } else {
-                lastX += smallCellWidth
-            }
+//            let isLastColumn = (index + 2) % (self.columnsCount + 1) == 0 || index == itemsCount - 1
+//            if isLastColumn {
+//                lastX = 0
+//                lastY += self.cellHeight
+//            } else {
+//                lastX += smallCellWidth
+//            }
             cacheAttributes[indexPath] = attributes
             
-            self.totalCellHeight = lastY
+        //    self.totalCellHeight = lastY
         
         }
     }

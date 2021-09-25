@@ -38,6 +38,8 @@ extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as!PhotosCollectionViewCell
         cell.photoImage.image = UIImage(named: users.userPhothosName[indexPath.row])
         cell.photoImage.contentMode = .scaleAspectFit
+        cell.addSubview(cell.LLikeControl)
+        cell.ss(l: cell.LLikeControl)
         
         return cell
     }

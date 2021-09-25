@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B50758F926DEA6F100A5E02B /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50758F826DEA6F100A5E02B /* PhotosCollectionViewCell.swift */; };
+		B51960D826FF55B3004B3D96 /* NewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51960D726FF55B3004B3D96 /* NewPhotoViewController.swift */; };
 		B522B72C26DE2F8700F8BAF0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522B72B26DE2F8700F8BAF0 /* User.swift */; };
 		B522B72F26DE2F9300F8BAF0 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522B72E26DE2F9300F8BAF0 /* Group.swift */; };
 		B522B73426DE309E00F8BAF0 /* UserAndGroupsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522B73326DE309E00F8BAF0 /* UserAndGroupsStorage.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		B50758F826DEA6F100A5E02B /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		B51960D726FF55B3004B3D96 /* NewPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPhotoViewController.swift; sourceTree = "<group>"; };
 		B522B72B26DE2F8700F8BAF0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B522B72E26DE2F9300F8BAF0 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		B522B73326DE309E00F8BAF0 /* UserAndGroupsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAndGroupsStorage.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				B59836EA26D6D46B006D480B /* PhotosViewController.swift */,
+				B51960D726FF55B3004B3D96 /* NewPhotoViewController.swift */,
 				B50758F826DEA6F100A5E02B /* PhotosCollectionViewCell.swift */,
 				B5FDBDFE26EE9BAE0005A760 /* LikeControl.swift */,
 				B582EB4926FA5954007D1CE6 /* PhotosCollectionViewLayout.swift */,
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5B825F126CAFEB9006034D5 /* LoginViewController.swift in Sources */,
+				B51960D826FF55B3004B3D96 /* NewPhotoViewController.swift in Sources */,
 				B59836EF26D6D4EE006D480B /* GroupsViewController.swift in Sources */,
 				B5B825ED26CAFEB9006034D5 /* AppDelegate.swift in Sources */,
 				B522B72F26DE2F9300F8BAF0 /* Group.swift in Sources */,

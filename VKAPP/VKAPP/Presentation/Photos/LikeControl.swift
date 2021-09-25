@@ -17,7 +17,7 @@ class LikeControl: UIControl {
         }
     }
     
-    private var likeLabel: UILabel = {
+     var likeLabel: UILabel = {
         let likelabel = UILabel()
         likelabel.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         likelabel.translatesAutoresizingMaskIntoConstraints = false
@@ -25,7 +25,7 @@ class LikeControl: UIControl {
         return likelabel
     }()
     
-    private var likeImage: UIImageView = {
+     var likeImage: UIImageView = {
         let imageView = UIImageView()
         imageView.frame = CGRect(x: 30, y: 0, width: 30, height: 30)
         imageView.translatesAutoresizingMaskIntoConstraints = true
