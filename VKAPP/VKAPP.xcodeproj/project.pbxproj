@@ -3,20 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B50758F926DEA6F100A5E02B /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50758F826DEA6F100A5E02B /* PhotosCollectionViewCell.swift */; };
+		65ED782A75BE07DCAA6AFE7B /* Pods_VKAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D67B7E79241D53C72AA643 /* Pods_VKAPP.framework */; };
+		B51960D826FF55B3004B3D96 /* NewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51960D726FF55B3004B3D96 /* NewPhotoViewController.swift */; };
 		B522B72C26DE2F8700F8BAF0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522B72B26DE2F8700F8BAF0 /* User.swift */; };
 		B522B72F26DE2F9300F8BAF0 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522B72E26DE2F9300F8BAF0 /* Group.swift */; };
 		B522B73426DE309E00F8BAF0 /* UserAndGroupsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522B73326DE309E00F8BAF0 /* UserAndGroupsStorage.swift */; };
+		B52EBCB227012C500039694B /* NewPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52EBCB127012C500039694B /* NewPhotoCollectionViewCell.swift */; };
 		B5488E4A26E2B61400C519D8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5488E4926E2B61400C519D8 /* Photo.swift */; };
 		B54C078A26EB8C7700DBE37B /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54C078926EB8C7700DBE37B /* AvatarView.swift */; };
 		B57E25CE26DEF29600A11912 /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57E25CD26DEF29600A11912 /* GroupsTableViewCell.swift */; };
 		B57E25D126DEF2AE00A11912 /* FindGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57E25D026DEF2AE00A11912 /* FindGroupTableViewCell.swift */; };
 		B582EB4A26FA5954007D1CE6 /* PhotosCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582EB4926FA5954007D1CE6 /* PhotosCollectionViewLayout.swift */; };
-		B59836EB26D6D46B006D480B /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59836EA26D6D46B006D480B /* PhotosViewController.swift */; };
 		B59836EF26D6D4EE006D480B /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59836EE26D6D4EE006D480B /* GroupsViewController.swift */; };
 		B59836F526D6D598006D480B /* FindGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59836F426D6D598006D480B /* FindGroupViewController.swift */; };
 		B59836F926D7B4CF006D480B /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59836F826D7B4CF006D480B /* FriendsViewController.swift */; };
@@ -31,16 +32,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B50758F826DEA6F100A5E02B /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		35D67B7E79241D53C72AA643 /* Pods_VKAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C05955A222708F3763D16A7 /* Pods-VKAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKAPP.debug.xcconfig"; path = "Target Support Files/Pods-VKAPP/Pods-VKAPP.debug.xcconfig"; sourceTree = "<group>"; };
+		B51960D726FF55B3004B3D96 /* NewPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPhotoViewController.swift; sourceTree = "<group>"; };
 		B522B72B26DE2F8700F8BAF0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B522B72E26DE2F9300F8BAF0 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		B522B73326DE309E00F8BAF0 /* UserAndGroupsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAndGroupsStorage.swift; sourceTree = "<group>"; };
+		B52EBCB127012C500039694B /* NewPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5488E4926E2B61400C519D8 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		B54C078926EB8C7700DBE37B /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		B57E25CD26DEF29600A11912 /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
 		B57E25D026DEF2AE00A11912 /* FindGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindGroupTableViewCell.swift; sourceTree = "<group>"; };
 		B582EB4926FA5954007D1CE6 /* PhotosCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewLayout.swift; sourceTree = "<group>"; };
-		B59836EA26D6D46B006D480B /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		B59836EE26D6D4EE006D480B /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		B59836F426D6D598006D480B /* FindGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindGroupViewController.swift; sourceTree = "<group>"; };
 		B59836F826D7B4CF006D480B /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		B5B825F826CAFEBF006034D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5B825FA26CAFEBF006034D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5FDBDFE26EE9BAE0005A760 /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
+		CB5308D46E384DB3D2D52042 /* Pods-VKAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKAPP.release.xcconfig"; path = "Target Support Files/Pods-VKAPP/Pods-VKAPP.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,12 +65,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65ED782A75BE07DCAA6AFE7B /* Pods_VKAPP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5395920BA5028C7E9C4C7012 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35D67B7E79241D53C72AA643 /* Pods_VKAPP.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		76684C3344F904D56AC4402A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C05955A222708F3763D16A7 /* Pods-VKAPP.debug.xcconfig */,
+				CB5308D46E384DB3D2D52042 /* Pods-VKAPP.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B522B72926DE2F6000F8BAF0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,10 +120,10 @@
 		B59836E826D6D444006D480B /* Photos */ = {
 			isa = PBXGroup;
 			children = (
-				B59836EA26D6D46B006D480B /* PhotosViewController.swift */,
-				B50758F826DEA6F100A5E02B /* PhotosCollectionViewCell.swift */,
+				B51960D726FF55B3004B3D96 /* NewPhotoViewController.swift */,
 				B5FDBDFE26EE9BAE0005A760 /* LikeControl.swift */,
 				B582EB4926FA5954007D1CE6 /* PhotosCollectionViewLayout.swift */,
+				B52EBCB127012C500039694B /* NewPhotoCollectionViewCell.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -129,6 +151,8 @@
 			children = (
 				B5B825EB26CAFEB9006034D5 /* VKAPP */,
 				B5B825EA26CAFEB9006034D5 /* Products */,
+				76684C3344F904D56AC4402A /* Pods */,
+				5395920BA5028C7E9C4C7012 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -207,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5B825FD26CAFEBF006034D5 /* Build configuration list for PBXNativeTarget "VKAPP" */;
 			buildPhases = (
+				348D952D279CCC564293FEAF /* [CP] Check Pods Manifest.lock */,
 				B5B825E526CAFEB9006034D5 /* Sources */,
 				B5B825E626CAFEB9006034D5 /* Frameworks */,
 				B5B825E726CAFEB9006034D5 /* Resources */,
+				4F33B29EB1756CAF20A35C47 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,18 +291,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		348D952D279CCC564293FEAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VKAPP-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F33B29EB1756CAF20A35C47 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VKAPP/Pods-VKAPP-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VKAPP/Pods-VKAPP-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VKAPP/Pods-VKAPP-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B5B825E526CAFEB9006034D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B52EBCB227012C500039694B /* NewPhotoCollectionViewCell.swift in Sources */,
 				B5B825F126CAFEB9006034D5 /* LoginViewController.swift in Sources */,
+				B51960D826FF55B3004B3D96 /* NewPhotoViewController.swift in Sources */,
 				B59836EF26D6D4EE006D480B /* GroupsViewController.swift in Sources */,
 				B5B825ED26CAFEB9006034D5 /* AppDelegate.swift in Sources */,
 				B522B72F26DE2F9300F8BAF0 /* Group.swift in Sources */,
 				B59836FC26D7B513006D480B /* FriendsTableViewCell.swift in Sources */,
 				B54C078A26EB8C7700DBE37B /* AvatarView.swift in Sources */,
-				B50758F926DEA6F100A5E02B /* PhotosCollectionViewCell.swift in Sources */,
 				B5B825EF26CAFEB9006034D5 /* SceneDelegate.swift in Sources */,
 				B57E25CE26DEF29600A11912 /* GroupsTableViewCell.swift in Sources */,
 				B522B72C26DE2F8700F8BAF0 /* User.swift in Sources */,
@@ -285,7 +354,6 @@
 				B5488E4A26E2B61400C519D8 /* Photo.swift in Sources */,
 				B59836F926D7B4CF006D480B /* FriendsViewController.swift in Sources */,
 				B57E25D126DEF2AE00A11912 /* FindGroupTableViewCell.swift in Sources */,
-				B59836EB26D6D46B006D480B /* PhotosViewController.swift in Sources */,
 				B59836F526D6D598006D480B /* FindGroupViewController.swift in Sources */,
 				B522B73426DE309E00F8BAF0 /* UserAndGroupsStorage.swift in Sources */,
 			);
@@ -431,6 +499,7 @@
 		};
 		B5B825FE26CAFEBF006034D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C05955A222708F3763D16A7 /* Pods-VKAPP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -450,6 +519,7 @@
 		};
 		B5B825FF26CAFEBF006034D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB5308D46E384DB3D2D52042 /* Pods-VKAPP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

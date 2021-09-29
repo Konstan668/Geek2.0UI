@@ -6,58 +6,55 @@
 //
 
 import UIKit
-class PhotosCollectionViewLayout: UICollectionViewLayout {
-    var cacheAttributes = [IndexPath: UICollectionViewLayoutAttributes] ()
-    var columnsCount = 1
-    var cellHeight:CGFloat = 400
+class PhotosCollectionViewLayout: UICollectionViewFlowLayout {
     
-    private var totalCellHeight: CGFloat = 0
+    var layOutDelegate: CustomLayOutDelegate?
+    var leftY = CGFloat(0)
+    var rightY = CGFloat(0)
+    var cacheAttributes = [UICollectionViewLayoutAttributes] ()
     
     override func prepare() {
-        self.cacheAttributes = [:]
+        super.prepare()
         
-        guard let collectionView = self.collectionView else { return }
+        guard let collectionView = collectionView else { return }
         
-        let itemsCount = collectionView.numberOfItems(inSection: 0)
+        let verticalSpacing = CGFloat(10)
+        let horizontalSpacing = CGFloat(10)
+        let margin = CGFloat(10)
+        leftY = margin
+        rightY = margin
         
-        guard itemsCount > 0 else { return }
-        
-        let smallCellWidth = collectionView.frame.width / CGFloat(self.columnsCount)
-        
-        var lastY: CGFloat = 0
-        var lastX: CGFloat = 0
-        
-        for index in 0..<itemsCount {
-            let indexPath = IndexPath(item: index, section: 0)
+        for item in 0..<collectionView.numberOfItems(inSection: 0) {
+            var frame = CGRect.zero
+            let cellHight = self.layOutDelegate!.hightAndWidthFor(index: item).heightForCell
+            let cellWidth = self.layOutDelegate!.hightAndWidthFor(index: item).widthForCell
+            frame.size.height = cellHight
+            frame.size.width = cellWidth + horizontalSpacing * 2//(collectionView.frame.size.width - 2 * margin) - horizontalSpacing / 2
+            frame.origin.x = margin
+            frame.origin.y = leftY
+            leftY += cellHight + verticalSpacing
+            
+            
+            let indexPath = IndexPath(item: item, section: 0)
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
-        
-    
-            attributes.frame = CGRect(x: lastX, y: lastY, width: smallCellWidth, height: self.cellHeight)
-            
-            let isLastColumn = (index + 2) % (self.columnsCount + 1) == 0 || index == itemsCount - 1
-            if isLastColumn {
-                lastX = 0
-                lastY += self.cellHeight
-            } else {
-                lastX += smallCellWidth
-            }
-            cacheAttributes[indexPath] = attributes
-            
-            self.totalCellHeight = lastY
-        
+            attributes.frame = frame
+            cacheAttributes.append(attributes)
         }
     }
+    
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        return cacheAttributes.values.filter { attributes in
-            return rect.intersects(attributes.frame)
+        var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
+        for attrutes in cacheAttributes {
+            if attrutes.frame.intersects(rect) {
+                visibleLayoutAttributes.append(attrutes)
+            }
         }
+        return visibleLayoutAttributes
     }
     
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        return cacheAttributes[indexPath]
-    }
+    
     override var collectionViewContentSize: CGSize {
-        return CGSize(width: self.collectionView?.frame.width ?? 0, height: self.totalCellHeight)
+        return CGSize.init(width: collectionView!.frame.size.width, height: leftY)
     }
 }
