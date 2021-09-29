@@ -9,7 +9,6 @@ import UIKit
 
 class LikeControl: UIControl {
     
-    
     var isFavorite: Bool = false {
         didSet {
             sendActions(for: .valueChanged)
@@ -17,18 +16,16 @@ class LikeControl: UIControl {
         }
     }
     
-     var likeLabel: UILabel = {
+    var likeLabel: UILabel = {
         let likelabel = UILabel()
         likelabel.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        likelabel.translatesAutoresizingMaskIntoConstraints = false
         likelabel.text = ""
         return likelabel
     }()
     
-     var likeImage: UIImageView = {
+    var likeImage: UIImageView = {
         let imageView = UIImageView()
         imageView.frame = CGRect(x: 30, y: 0, width: 30, height: 30)
-        imageView.translatesAutoresizingMaskIntoConstraints = true
         imageView.image = UIImage(named: "Heart")
         return imageView
     }()
@@ -36,15 +33,18 @@ class LikeControl: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-        setupGsture()
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        likeImage.isUserInteractionEnabled = true
+        likeImage.addGestureRecognizer(gestureRecognizer)
+        
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupViews()
-        setupGsture()
+        
     }
-    private func updateControl() {
+    func updateControl() {
         if isFavorite {
             likeImage.image = UIImage(named: "HeartFill")
             
@@ -57,30 +57,30 @@ class LikeControl: UIControl {
     private func setupViews() {
         addSubview(likeImage)
         addSubview(likeLabel)
-        NSLayoutConstraint.activate([
-            //            likeImage.topAnchor.constraint(equalTo: topAnchor),
-            //            likeImage.bottomAnchor.constraint(equalTo: bottomAnchor),
-            //            likeImage.leadingAnchor.constraint(equalTo: leadingAnchor),
-            //            likeImage.trailingAnchor.constraint(equalTo: trailingAnchor),
-            likeLabel.topAnchor.constraint(equalTo: topAnchor),
-            likeLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-            likeLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            likeLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
-        ])
-    }
-    private func setupGsture(){
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
-        addGestureRecognizer(tap)
         
     }
-    @objc private func tapped(){
+    
+    
+    @objc  func tapped(){
         isFavorite.toggle()
         
         if isFavorite == false {
+            likeLabel.fadeTransition(1)
             likeLabel.text = ""
             
         } else {
+            likeLabel.fadeTransition(1)
             likeLabel.text = "1"
         }
+    }
+}
+
+extension UIView {
+    func fadeTransition(_ duration: CFTimeInterval) {
+        let animation = CATransition()
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        animation.type = CATransitionType.fade
+        animation.duration = duration
+        layer.add(animation, forKey: CATransitionType.fade.rawValue)
     }
 }

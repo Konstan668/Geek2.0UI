@@ -1,32 +1,38 @@
 
 import UIKit
 
-class NewPhotoViewController: UIViewController {
+protocol CustomLayOutDelegate {
+    func hightAndWidthFor(index: Int) -> (widthForCell: CGFloat, heightForCell: CGFloat)
+    
+}
+
+class NewPhotoViewController: UIViewController, CustomLayOutDelegate {
     
     var myCollectionView: UICollectionView?
     var users = User(userName: "", userImageName: "", userPhotossName: [""])
-    var one = ""
+    var screenSize: CGRect!
+    var screenWidth: CGFloat!
+    var screenHeight: CGFloat!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        
+        screenSize = UIScreen.main.bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
         
         let view = UIView()
-        view.backgroundColor = .black
         
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 60, height: 60)
+        let layout: PhotosCollectionViewLayout = PhotosCollectionViewLayout()
+        layout.layOutDelegate = self
+        
         let collectionViewFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        
         myCollectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: layout)
-        myCollectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
-        myCollectionView?.backgroundColor = .red
-        
+        myCollectionView?.register(NewPhotoCollectionViewCell.self, forCellWithReuseIdentifier: NewPhotoCollectionViewCell.identifier)
         myCollectionView?.translatesAutoresizingMaskIntoConstraints = false
-
-        
+        myCollectionView?.backgroundColor = .white
         myCollectionView?.dataSource = self
         myCollectionView?.delegate = self
         
@@ -34,7 +40,7 @@ class NewPhotoViewController: UIViewController {
         
         self.view = view
         addCinstraints()
-    print("one = ", one)
+        
     }
     
     func addCinstraints(){
@@ -49,25 +55,40 @@ class NewPhotoViewController: UIViewController {
         myCollectionView?.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
     }
     
-    
-    
-    
+    func hightAndWidthFor(index: Int) -> (widthForCell: CGFloat, heightForCell: CGFloat) {
+        let image = UIImage(named: users.userPhothosName[index])
+        let h = image?.size.height
+        let w = image?.size.width
+        guard let imagewidth = w else { return (1, 1)}
+        guard let imageHeight = h else { return (1, 1)}
+        screenSize = UIScreen.main.bounds
+        screenWidth = screenSize.width
+        
+        if screenWidth <= imagewidth {
+            let mult = (imagewidth / screenWidth) + 0.3
+            return (imagewidth / mult, imageHeight / mult )
+            
+        } else {
+            return (imagewidth, imageHeight)
+        }
+    }
 }
 
 
-extension NewPhotoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension NewPhotoViewController: UICollectionViewDelegate, UICollectionViewDataSource  {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return users.userPhothosName.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
-        myCell.backgroundColor = .brown
-//        cell.photoImage.image = UIImage(named: users.userPhothosName[indexPath.row])
-//        cell.photoImage.contentMode = .scaleAspectFit
-        return myCell
+        let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! NewPhotoCollectionViewCell
+        myCell.photoImageView.image = UIImage(named: users.userPhothosName[indexPath.row])
+        myCell.photoImageView.isUserInteractionEnabled = true
+        myCell.likeControlItem.isUserInteractionEnabled = true
+        
+        return myCell 
     }
-    
     
 }
