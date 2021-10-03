@@ -218,15 +218,15 @@
             </objects>
             <point key="canvasLocation" x="2203" y="457"/>
         </scene>
-        <!--New Photo View Controller-->
+        <!--View Controller Lesson8-->
         <scene sceneID="ABh-4K-Nse">
             <objects>
-                <viewController id="sfb-2X-p2z" customClass="NewPhotoViewController" customModule="VKAPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sfb-2X-p2z" customClass="ViewControllerLesson8" customModule="VKAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="1v0-dh-m6q"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVF-ly-r2p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2904" y="-200"/>
+            <point key="canvasLocation" x="2936" y="-200"/>
         </scene>
         <!--FindGroupViewController-->
         <scene sceneID="kAH-QC-g5A">
@@ -349,7 +349,6 @@
                                         <connections>
                                             <outlet property="avatarView" destination="kGj-Ph-ooP" id="GI7-4N-hEV"/>
                                             <outlet property="friendsLabel" destination="naP-GA-dIV" id="Rpw-4R-mNa"/>
-                                            <segue destination="sfb-2X-p2z" kind="show" identifier="photosSegue" trigger="accessoryAction" id="kBu-fD-UjV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -373,6 +372,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="FriendsTableView" destination="zAS-rX-xrY" id="X90-PH-Ujb"/>
+                        <segue destination="sfb-2X-p2z" kind="show" identifier="photosSegue" id="yj4-nN-buu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LDZ-Mf-Tit" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
