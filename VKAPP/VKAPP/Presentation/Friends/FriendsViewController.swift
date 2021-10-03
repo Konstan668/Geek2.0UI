@@ -135,7 +135,8 @@ final class FriendsViewController: UIViewController {
 //    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "photosSegue" else { return }
-        guard let destination = segue.destination as? NewPhotoViewController else { return }
+       // guard let destination = segue.destination as? NewPhotoViewController else { return }
+        guard let destination = segue.destination as? ViewControllerLesson8 else {return}
         let row = sender as! User
         destination.users = row
     }
