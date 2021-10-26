@@ -33,6 +33,7 @@
 		B5E675642712258C00E2DBE6 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E675632712258C00E2DBE6 /* CustomNavigationController.swift */; };
 		B5E675682713634F00E2DBE6 /* CustomPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E675672713634F00E2DBE6 /* CustomPopAnimator.swift */; };
 		B5E6756C271DDFA000E2DBE6 /* CustomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6756B271DDF9F00E2DBE6 /* CustomInteractiveTransition.swift */; };
+		B5E6759E272826FE00E2DBE6 /* MySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6759D272826FE00E2DBE6 /* MySession.swift */; };
 		B5FDBDFF26EE9BAE0005A760 /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDBDFE26EE9BAE0005A760 /* LikeControl.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		B5E675632712258C00E2DBE6 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		B5E675672713634F00E2DBE6 /* CustomPopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopAnimator.swift; sourceTree = "<group>"; };
 		B5E6756B271DDF9F00E2DBE6 /* CustomInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInteractiveTransition.swift; sourceTree = "<group>"; };
+		B5E6759D272826FE00E2DBE6 /* MySession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySession.swift; sourceTree = "<group>"; };
 		B5FDBDFE26EE9BAE0005A760 /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
 		CB5308D46E384DB3D2D52042 /* Pods-VKAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKAPP.release.xcconfig"; path = "Target Support Files/Pods-VKAPP/Pods-VKAPP.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +180,7 @@
 		B5B825EB26CAFEB9006034D5 /* VKAPP */ = {
 			isa = PBXGroup;
 			children = (
+				B5E6759B272826E400E2DBE6 /* Network */,
 				B5B8260126CB0232006034D5 /* AppDelegate */,
 				B522B72926DE2F6000F8BAF0 /* Model */,
 				B522B73126DE305900F8BAF0 /* Repository */,
@@ -245,6 +248,14 @@
 				B5E6756B271DDF9F00E2DBE6 /* CustomInteractiveTransition.swift */,
 			);
 			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		B5E6759B272826E400E2DBE6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B5E6759D272826FE00E2DBE6 /* MySession.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +376,7 @@
 				B52EBCB227012C500039694B /* NewPhotoCollectionViewCell.swift in Sources */,
 				B5B825F126CAFEB9006034D5 /* LoginViewController.swift in Sources */,
 				B51960D826FF55B3004B3D96 /* NewPhotoViewController.swift in Sources */,
+				B5E6759E272826FE00E2DBE6 /* MySession.swift in Sources */,
 				B5E675682713634F00E2DBE6 /* CustomPopAnimator.swift in Sources */,
 				B59836EF26D6D4EE006D480B /* GroupsViewController.swift in Sources */,
 				B5E6755C27049B9C00E2DBE6 /* ViewControllerLesson8.swift in Sources */,
